@@ -1,0 +1,14 @@
+class Solution {
+public:
+    vector<int> countBits(int num) {
+        if(num == 0)
+            return {0};
+        vector<int> dp(num+1, 0);
+        dp[0] = 0;
+        for(int i = 1; i <= num; ++i)
+        {
+            dp[i] = dp[i/2] + (i%2);
+        }
+        return dp;
+    }
+};
